@@ -1,0 +1,91 @@
+<!-- 
+
+This HTML file demonstrates a canvas experiment using the HTML5 <canvas> element and JavaScript. 
+It includes the following features:
+
+1. **Canvas Setup**:
+    - A <canvas> element with an ID of "myCanvas" is defined, having a width and height of 600px.
+    - Basic CSS styles are applied to center the canvas and add a border.
+
+2. **Drawing on Canvas**:
+    - A blue rectangle is drawn at coordinates (20, 20) with a size of 80x80 pixels.
+    - A larger rectangle is outlined at coordinates (100, 100) with a size of 400x400 pixels.
+    - An arc (part of a circle) is drawn with a center at (300, 300), a radius of 100 pixels, and spanning from π radians to 2π radians.
+
+3. **Marking Points**:
+    - A red dot is drawn at the starting point of the arc, calculated using trigonometric functions.
+
+4. **Drawing a Right Triangle**:
+    - A right triangle is drawn inside the circle:
+      - One vertex is at the circle's center (300, 300).
+      - Another vertex is at the arc's starting point (200, 300).
+      - The third vertex is at a point on the horizontal line (300, 400).
+    - The triangle is outlined in green and filled with a semi-transparent green color.
+
+5. **Customization**:
+    - The script uses various canvas properties such as `fillStyle`, `strokeStyle`, and `lineWidth` to customize the appearance of shapes.
+
+This experiment demonstrates basic canvas drawing techniques, including rectangles, arcs, and custom shapes, as well as the use of trigonometry for precise positioning.
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Canvas Experiment</title>
+    <style>
+        canvas {
+            border: 1px solid black;
+            display: block;
+            margin: 20px auto;
+        }
+    </style>
+</head>
+<body>
+    <h1>Canvas Experiment</h1>
+    <canvas id="myCanvas" width="600" height="600"></canvas>
+
+    <script>
+        const canvas = document.getElementById('myCanvas');
+        const ctx = canvas.getContext('2d');
+
+        // Example: Draw a rectangle
+        ctx.fillStyle = 'blue';
+        // ctx.fillRect(10, 10, 200, 100);
+        
+        ctx.lineWidth = 5;
+
+        ctx.beginPath();
+        ctx.rect(20, 20, 80, 80);
+        ctx.fill();
+        ctx.stroke();
+
+        ctx.beginPath();
+        ctx.rect(100, 100, 400, 400);
+        ctx.stroke();
+
+        ctx.beginPath();
+        ctx.arc(300, 300, 100, Math.PI, 2 * (Math.PI * 2));
+        ctx.stroke();
+        
+        // Marcar o ponto inicial
+        ctx.beginPath();
+        ctx.arc(300 + 100 * Math.cos(Math.PI), 300 + 100 * Math.sin(Math.PI), 5, 0, Math.PI * 2);
+        ctx.fillStyle = 'red';
+        ctx.fill();
+
+        // Desenhar o triângulo retângulo
+        ctx.beginPath();
+        ctx.moveTo(300, 300); // Centro do círculo
+        ctx.lineTo(200, 300); // Ponto inicial do arco (base do triângulo)
+        ctx.lineTo(300, 400); // Ponto na horizontal (hipotenusa)
+        ctx.closePath(); // Fecha o triângulo de volta ao ponto inicial
+        ctx.strokeStyle = 'green'; // Cor da borda do triângulo
+        ctx.lineWidth = 2;
+        ctx.stroke();
+        ctx.fillStyle = 'rgba(0, 255, 0, 0.3)'; // Cor de preenchimento com transparência
+        ctx.fill();
+        
+    </script>
+</body>
+</html>
