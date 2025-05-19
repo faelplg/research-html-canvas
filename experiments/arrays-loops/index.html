@@ -1,0 +1,78 @@
+<!-- 
+
+This HTML file demonstrates a canvas experiment using the HTML5 <canvas> element and JavaScript. 
+It includes the following features:
+
+1. **Canvas Setup**:
+    - A <canvas> element with an ID of "myCanvas" is defined, having a width and height of 600px.
+    - Basic CSS styles are applied to center the canvas and add a border.
+
+2. **Drawing on Canvas**:
+    - A blue rectangle is drawn at coordinates (20, 20) with a size of 80x80 pixels.
+    - A larger rectangle is outlined at coordinates (100, 100) with a size of 400x400 pixels.
+    - An arc (part of a circle) is drawn with a center at (300, 300), a radius of 100 pixels, and spanning from π radians to 2π radians.
+
+3. **Marking Points**:
+    - A red dot is drawn at the starting point of the arc, calculated using trigonometric functions.
+
+4. **Drawing a Right Triangle**:
+    - A right triangle is drawn inside the circle:
+      - One vertex is at the circle's center (300, 300).
+      - Another vertex is at the arc's starting point (200, 300).
+      - The third vertex is at a point on the horizontal line (300, 400).
+    - The triangle is outlined in green and filled with a semi-transparent green color.
+
+5. **Customization**:
+    - The script uses various canvas properties such as `fillStyle`, `strokeStyle`, and `lineWidth` to customize the appearance of shapes.
+
+This experiment demonstrates basic canvas drawing techniques, including rectangles, arcs, and custom shapes, as well as the use of trigonometry for precise positioning.
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Canvas Experiment</title>
+    <style>
+        canvas {
+            border: 1px solid black;
+            display: block;
+            margin: 20px auto;
+        }
+    </style>
+</head>
+<body>
+    <h1>Canvas Experiment</h1>
+    <canvas id="myCanvas" width="600" height="600"></canvas>
+
+    <script>
+        const canvas = document.getElementById('myCanvas');
+        const ctx = canvas.getContext('2d');
+
+        ctx.fillStyle = 'lightblue';
+        ctx.lineWidth = 5;
+    
+        for (let i = 0; i < 5; i++) {
+            for (let j = 0; j < 5; j++) {
+                let width = 60;
+                let height = 60;
+                let gap = 20;
+                let x = 100 + (width + gap) * i;
+                let y = 100 + (height + gap) * j;
+
+                ctx.beginPath();
+                ctx.rect(x, y, width, height);
+                ctx.fill();
+                ctx.stroke();
+
+                if (Math.random() > 0.5) {
+                    ctx.beginPath();
+                    ctx.rect(x + 8, y + 8, width - 16, height - 16);
+                    ctx.stroke();
+                }
+            }
+        }
+        
+    </script>
+</body>
+</html>
