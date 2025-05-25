@@ -70,6 +70,7 @@ This experiment demonstrates basic canvas drawing techniques, including rectangl
         
         // Marcar o ponto inicial
         ctx.beginPath();
+        // Desenha um ponto vermelho no início do arco (posição calculada com trigonometria)
         ctx.arc(300 + 100 * Math.cos(Math.PI), 300 + 100 * Math.sin(Math.PI), 5, 0, Math.PI * 2);
         ctx.fillStyle = 'red';
         ctx.fill();
