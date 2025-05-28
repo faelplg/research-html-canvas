@@ -7,16 +7,18 @@
  * while arcs are drawn with randomized radii and angles to create a dynamic, abstract composition.
  * Utilizes canvas-sketch-util for mathematical operations and randomness, resulting in a visually engaging, algorithmically generated artwork.
  */
+// Import the canvas-sketch library to create generative art sketches
 const canvasSketch = require('canvas-sketch');
 const math = require('canvas-sketch-util/math');
 const random = require('canvas-sketch-util/random');
 
 const settings = {
 	dimensions: [1080, 1080],
+	animate: true, // Enable animation
 };
 
 const sketch = () => {
-	return ({ context, width, height }) => {
+	return ({ context, width, height, time }) => {
 		// Fill background
 		context.fillStyle = 'white';
 		context.fillRect(0, 0, width, height);
@@ -33,7 +35,7 @@ const sketch = () => {
 
 		for (let i = 0; i < num; i++) {
 			const slice = math.degToRad(360 / num); // Angle per slice
-			const angle = slice * i;
+			const angle = slice * i * time * 0.05; // Calculate angle for each rectangle
 
 			const x = cx + Math.sin(angle) * radius;
 			const y = cy + Math.cos(angle) * radius;
