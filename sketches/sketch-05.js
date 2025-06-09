@@ -4,12 +4,14 @@ const settings = {
 	dimensions: [1080, 1080],
 };
 
+let manager
+
 let text = 'F';
 let fontSize = 1200;
 let fontfamily = 'serif';
 
 const sketch = () => {
-	return ({ context, width, height }) => {
+	return ({ context, width, height}) => {
 		context.fillStyle = 'white';
 		context.fillRect(0, 0, width, height);
 
