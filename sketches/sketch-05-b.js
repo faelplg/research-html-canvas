@@ -8,7 +8,7 @@ let manager;
 
 let text = 'F';
 let fontSize = 1200;
-let fontfamily = 'serif';
+let fontfamily = 'sans-serif';
 
 const typeCanvas = document.createElement('canvas');
 const typeContext = typeCanvas.getContext('2d');
@@ -107,8 +107,9 @@ const getGlyph = v => {
   // return glyphs[index];
 };
 
-document.addEventListener('keyup', e => {
-  text = e.key.toUpperCase();
+document.addEventListener('keydown', e => {
+  // text = e.key.toUpperCase();
+  text = e.key;
   console.log(`Key pressed: ${text}`);
   manager.render();
 });
