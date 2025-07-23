@@ -16,10 +16,60 @@ body, p, li, ul, ol, dl, dd, blockquote {
 	margin: 0 0 1.6rem 0;
 }
 
+/* Small text, captions, legends */
 small, .caption, figcaption, legend, label {
 	font-family: 'Inter', sans-serif;
 	font-size: 1.2rem;
-	font-weifht: 400;
+	font-weight: 400;
 	line-height: 1.5;
 	color: #555;
 }
+
+/* Code blocks and inline code */
+pre, code, kbd, samp {
+	font-family: 'Fira Code', monospace;
+	font-size: 1.4rem; /* 14px */
+	line-height: 1.6;
+	background: #f5f5f5;
+	color: #222;
+	border-radius: 0.4rem;
+	padding: 0.32em 0.64em;
+}
+
+/* Headings */
+h1, h2, h3, h4, h5, h6 {
+	font-family: 'Space Grotesk', sans-serif;
+	font-weight: 700;
+	margin: 0 0 1.6rem 0;
+}
+
+h1 {
+	font-size: 2.8rem;
+	line-height: 1.2;
+}
+h2 {
+	font-size: 2.4rem;
+	line-height: 1.25;
+}
+h3 {
+	font-size: 2rem;
+	line-height: 1.3;
+}
+h4 {
+	font-size: 1.8rem;
+	line-height: 1.35;
+}
+h5 {
+	font-size: 1.6rem;
+	line-height: 1.4;
+}
+h6 {
+	font-size: 1.4rem;
+	line-height: 1.45;
+}
+
+/* Main text styles */
+b {
+	font-weight: bolder;
+}
+

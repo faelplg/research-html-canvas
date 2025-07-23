@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+tmux renamew "main"
+tmux new-window -n "web-server"
+tmux new-window -n "nvim-html"
+tmux new-window -n "nvim-css"
+tmux new-window -n "nvim-js"
