@@ -1,7 +1,7 @@
 /* Main styles */
 
 * {
-	box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 /* Font-size settings
@@ -10,11 +10,11 @@
  * 1rem = 10px
  */
 html {
-	/*
+  /*
 	 * I want 10px as the default font-size.
 	 * 16px is the root default.
 	 * 10px divided by 16px = 0.625.
 	 * Now 1rem ~= 10px;
 	 */
-	font-size: 62.5%;
+  font-size: 62.5%;
 }
