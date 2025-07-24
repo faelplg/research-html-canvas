@@ -17,12 +17,10 @@
     <meta name="author" content="AVJ SinCos" />
 
     <!-- Favicon -->
-    <!--<link rel="icon" href="favicon.ico" />
-    <link rel="apple-touch-icon" sizes="180x180" href="img/apple-touch-icon.png" />
+    <link rel="icon" href="favicon.ico" />
+    <!--<link rel="apple-touch-icon" sizes="180x180" href="img/apple-touch-icon.png" />
     <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png" />
     <link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png" />-->
-    <!-- TEMP -->
-    <link rel="icon" href="https://fav.farm/paint" />
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -43,45 +41,66 @@
     <!-- Styles -->
     <link rel="stylesheet" href="reset.css" />
     <link rel="stylesheet" href="typography.css" />
+    <link rel="stylesheet" href="colors.css" />
     <link rel="stylesheet" href="styles.css" />
-    <link rel="stylesheet" href="test.css" />
   </head>
   <body>
+    <!-- Navigation bar -->
     <header>
-      <section class="header--left">
-        <span>Projeto SinCos</span>
-      </section>
-      <section class="header--right">
-        <nav aria-label="Main navigation">
-          <a href="#main">Main</a>
-          <a href="#about">About</a>
-        </nav>
+      <div class="header__container">
+        <span>Teste</span>
+      </div>
+      <div class="header__container">
+        <section class="header--left">
+          <span>Projeto SinCos</span>
+        </section>
+        <section class="header--right">
+          <nav aria-label="Main navigation">
+            <a href="#main">Main</a>
+            <a href="#about">About</a>
+          </nav>
+        </div>
       </section>
     </header>
+    <!-- Main content -->
     <main id="main">
-      <section>
-        <h2>HTML Canvas - EXP01</h2>
-        <h3>Primeira Exploração</h3>
-        <p>
-          Exploração inicial do projeto de Creative Coding utilizando HTML
-          Canvas para criar experiências visuais interativas. Este experimento
-          foca na implementação de elementos gráficos dinâmicos e responsivos.
-        </p>
-        <figure>
-          <img
-            src="https://placehold.co/600x400"
-            alt="Canvas experiment showing dynamic visual elements and interactive graphics"
-          />
-          <figcaption>
-            <b><u>Fig. 01:</u></b> Exemplo de renderização do experimento HTML
-            Canvas com elementos visuais dinâmicos.
-          </figcaption>
-        </figure>
-        <code>const canvas = document.getElementById('canvas');</code>
+      <section class="section">
+        <div class="container">
+          <h1>HTML Canvas - EXP01</h2>
+          <h2>Primeira Exploração</h3>
+          <p>
+            Exploração inicial do projeto de Creative Coding utilizando HTML
+            Canvas para criar experiências visuais interativas. Este experimento
+            foca na implementação de elementos gráficos dinâmicos e responsivos.
+          </p>
+          <figure>
+            <img
+              src="https://placehold.co/600x400"
+              alt="Canvas experiment showing dynamic visual elements and interactive graphics"
+            />
+            <figcaption>
+              <b><u>Fig. 01:</u></b> Exemplo de renderização do experimento HTML
+              Canvas com elementos visuais dinâmicos.
+            </figcaption>
+          </figure>
+          <code>const canvas = document.getElementById('canvas');</code>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container">
+          <h2>Título da segunda seção</h2>
+          <p>
+            Text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text.
+          </p>
+          <p>
+            Text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text.
+          </p>
+        </div>
       </section>
     </main>
-
-    <footer>
+    <!-- Page footer -->
+    <footer id="footer">
       <p>
         <small>&copy; 2025 AVJ SinCos. Creative Coding Experiments.</small>
       </p>

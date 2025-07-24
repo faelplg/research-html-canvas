@@ -17,9 +17,53 @@ html {
 	 * Now 1rem ~= 10px;
 	 */
   font-size: 62.5%;
+  height: 100%;
+  overflow: hidden;
 }
 
+body {
+  height: 100%;
+  overflow-y: scroll;
+  overflow-x: auto;
+}
+
+/* Header style */
 header {
+  display: block;
+  position: sticky;
+  z-index: 100;
+  top: 0;
+}
+.header__container {
   display: flex;
-  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+  /**/
+  padding: 1.6rem 3.2rem;
+  /**/
+  border-bottom: 0.1rem solid var(--color-surface-muted);
+}
+
+main {
+  display: block;
+  flex: 1;
+}
+
+.section {
+  padding: 4rem 0;
+}
+
+.section .container {
+  width: 100%;
+  max-width: 120rem;
+  margin: 0 auto;
+  padding: 0 1.6rem;
+}
+
+footer {
+  width: 100%;
+  max-width: 120rem;
+  /**/
+  padding: 1.6rem;
+  margin: 0 auto;
 }
