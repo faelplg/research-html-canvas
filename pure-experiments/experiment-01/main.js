@@ -1,32 +1,65 @@
-console.log('==Main==');
+console.log("==Main==");
 
-document.addEventListener('DOMContentLoaded', function() {
-  // seu código canvas aqui
-  const canvas = document.getElementById('showroom');
-  console.log(canvas);
-  const ctx = canvas.getContext('2d');
+const config = {
+  width: 1000,
+  height: 400,
+  aspect: 2.5,
+  margin: 32,
+  background: "#e9e6ea",
+  pixelRatio: window.devicePixelRatio || 1,
+};
 
-  // Responsividade e alta definição
-  function resizeCanvas() {
-    console.log('...resizing canvas...');
-    // const dpr = window.devicePixelRatio || 1;
-    const dpr = 1;
-    console.log(dpr);
-    // Pegue o tamanho exibido pelo CSS
-    const rect = canvas.getBoundingClientRect();
-    canvas.width = rect.width * dpr;
-    canvas.height = rect.height * dpr;
-    ctx.setTransform(1, 0, 0, 1, 0, 0); // Reset transform
+function setupCanvas(canvas, config) {
+  function resize() {
+    const container = canvas.parentElement;
+    const dpr = config.pixelRatio;
+    const containerWidth = container.clientWidth - config.margin * 2;
+    const containerHeight =
+      window.innerHeight -
+      container.getBoundingClientRect().top -
+      config.margin * 2;
+
+    let width = containerWidth;
+    let height = width / config.aspect;
+    if (height > containerHeight) {
+      height = containerHeight;
+      width = height * config.aspect;
+    }
+    width = Math.floor(width);
+    height = Math.floor(height);
+
+    canvas.width = width * dpr;
+    canvas.height = height * dpr;
+    canvas.style.width = width + "px";
+    canvas.style.height = height + "px";
+
+    const ctx = canvas.getContext("2d");
+    ctx.setTransform(1, 0, 0, 1, 0, 0);
     ctx.scale(dpr, dpr);
 
-    ctx.fillStyle = '#e9e6ea';
-    ctx.fillRect(0, 0, canvas.width, canvas.height);
-    ctx.fillStyle = '#1a0e1d';
-
-    ctx.font = '24px Space Grotesk, sans-serif';
-    ctx.fillText('Welcome to the HTML Canvas Experiments Showroom!', 32, canvas.height/2);
+    draw(ctx, width, height, config);
   }
-  window.addEventListener('resize', resizeCanvas);
-  resizeCanvas();
 
+  window.addEventListener("resize", resize);
+  resize();
+}
+
+function draw(ctx, width, height, config) {
+  ctx.fillStyle = config.background;
+  ctx.fillRect(0, 0, width, height);
+
+  ctx.fillStyle = "#1a0e1d";
+  ctx.font = "24px Space Grotesk, sans-serif";
+  ctx.textAlign = "center";
+  ctx.textBaseline = "middle";
+  ctx.fillText(
+    "Welcome to the HTML Canvas Experiments Showroom!",
+    width / 2,
+    height / 2
+  );
+}
+
+document.addEventListener("DOMContentLoaded", function () {
+  const canvas = document.getElementById("showroom");
+  setupCanvas(canvas, config);
 });
