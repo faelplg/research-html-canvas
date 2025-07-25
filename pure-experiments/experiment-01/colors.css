@@ -1,26 +1,26 @@
 :root {
-    --color-bg: #f4f1f5;
-    --color-surface: #ffffff;
-    --color-surface-muted: #e9e6ea;
-    --color-contrast: #1c1b1e;
+  --color-bg: #f4f1f5;
+  --color-surface: #ffffff;
+  --color-surface-muted: #e9e6ea;
+  --color-contrast: #1c1b1e;
 
-    --color-primary: #472c63;
-    --color-primary-light: #836c97;
-    --color-primary-dark: #2f1a45;
+  --color-primary: #472c63;
+  --color-primary-light: #836c97;
+  --color-primary-dark: #2f1a45;
 
-    --color-secondary: #d1528c;
-    --color-secondary-light: #f99bc2;
-    --color-secondary-dark: #911d5e;
+  --color-secondary: #d1528c;
+  --color-secondary-light: #f99bc2;
+  --color-secondary-dark: #911d5e;
 
-    --color-accent: #6ec1b2;
-    /* to add freshness */
-    --color-accent-muted: #b7e2dc;
+  --color-accent: #6ec1b2;
+  /* to add freshness */
+  --color-accent-muted: #b7e2dc;
 
-    --text-primary: #1a0e1d;
-    --text-secondary: #6f6f6f;
-    --text-inverse: #ffffff;
+  --text-primary: #1a0e1d;
+  --text-secondary: #6f6f6f;
+  --text-inverse: #ffffff;
 
-    --border-color: #d3ced6;
+  --border-color: #d3ced6;
 }
 
 /* Dark mode colors
@@ -50,63 +50,3 @@
     }
 }
 */
-
-header {
-  background: var(--color-surface);
-  color: var(--text-primary);
-}
-
-/* Paragraphs and general text */
-body {
-  background: var(--color-bg);
-}
-body,
-p,
-li,
-ul,
-ol,
-dl,
-dd,
-blockquote {
-  color: var(--text-primary);
-}
-
-/* Small text, captions, legends */
-small,
-.caption,
-figcaption,
-legend,
-label {
-  color: var(--text-secondary);
-}
-
-/* Code blocks and inline code */
-pre,
-code,
-kbd,
-samp {
-  background: var(--color-surface-muted);
-  color: var(--text-primary);
-}
-
-/* Links */
-a {
-  color: var(--color-accent);
-}
-
-header nav a {
-  color: var(--color-secondary-light);
-}
-header nav a:hover {
-  color: var(--color-secondary)
-}
-
-/* Buttons */
-button, .btn {
-  background-color: red;
-}
-
-/* Blockquote */
-blockquote {
-  color: var(--text-secondary);
-}

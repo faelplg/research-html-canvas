@@ -86,24 +86,24 @@ h6 {
 
 /* Display styles */
 .display-1 {
-  font-family: 'Space Grotesk', sans-serif;
-  font-size: 6.4rem;    /* 64px */
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 6.4rem; /* 64px */
   font-weight: 700;
   line-height: 1.1;
   letter-spacing: -0.02em;
 }
 
 .display-2 {
-  font-family: 'Space Grotesk', sans-serif;
-  font-size: 5.2rem;    /* 52px */
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 5.2rem; /* 52px */
   font-weight: 700;
   line-height: 1.15;
   letter-spacing: -0.015em;
 }
 
 .display-3 {
-  font-family: 'Space Grotesk', sans-serif;
-  font-size: 4.2rem;    /* 42px */
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 4.2rem; /* 42px */
   font-weight: 700;
   line-height: 1.18;
   letter-spacing: -0.01em;
@@ -117,18 +117,21 @@ a {
 }
 
 /* Lists */
-ul, ol {
+ul,
+ol {
   padding-left: 2.4rem;
 }
 
 /* Buttons */
-button, .btn {
-  font-family: 'Space Grotesk', sans-serif;
+button,
+.btn {
+  font-family: "Space Grotesk", sans-serif;
   font-size: 1.6rem;
   font-weight: 600;
   line-height: 1.2;
   letter-spacing: 0.02em;
   text-transform: uppercase;
+  cursor: pointer;
 }
 
 /* Blockquote */
@@ -139,10 +142,12 @@ blockquote {
 }
 
 /* Strong and emphasis */
-strong, b {
+strong,
+b {
   font-weight: 700;
 }
 
-em, i {
+em,
+i {
   font-style: italic;
 }

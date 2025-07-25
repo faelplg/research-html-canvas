@@ -1,15 +1,15 @@
-/* Main styles */
+/*
+ * Main structures
+ */
 
+/* All elements */
 * {
   box-sizing: border-box;
 }
 
-/* Font-size settings
- *
- * 1em = 16px
- * 1rem = 10px
- */
+/* HTML main settings */
 html {
+  height: 100%;
   /*
 	 * I want 10px as the default font-size.
 	 * 16px is the root default.
@@ -17,53 +17,186 @@ html {
 	 * Now 1rem ~= 10px;
 	 */
   font-size: 62.5%;
-  height: 100%;
-  overflow: hidden;
 }
 
+/* Body behavior */
 body {
   height: 100%;
-  overflow-y: scroll;
+  display: flex;
+  flex-flow: column;
+  overflow-y: auto;
   overflow-x: auto;
+  /**/
+  /**/
+  background: var(--color-bg);
+}
+
+/* Page sections */
+.section {
+  /**/
+  padding: 4rem 0;
+  /**/
+}
+
+.container {
+  width: 100%;
+  max-width: 120rem;
+  /**/
+  margin: 0 auto;
+  padding: 0 1.6rem;
+  /**/
+}
+
+/*
+ * Page structures
+ */
+
+.project__header {
+  min-height: 6.4rem;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  /**/
+  /**/
+  background-color: var(--color-primary-light);
+  border-bottom: 0.1rem solid var(--color-surface-muted);
 }
 
 /* Header style */
 header {
-  display: block;
-  position: sticky;
-  z-index: 100;
+  min-height: 6.4rem;
+  display: flex;
   top: 0;
+  z-index: 100;
+  position: sticky;
+  /**/
+  /**/
+  background: var(--color-surface);
+  color: var(--text-primary);
+  border-bottom: 0.1rem solid var(--color-surface-muted);
 }
-.header__container {
+header .container {
   display: flex;
   justify-content: space-between;
   align-items: center;
   /**/
-  padding: 1.6rem 3.2rem;
   /**/
-  border-bottom: 0.1rem solid var(--color-surface-muted);
 }
 
 main {
-  display: block;
-  flex: 1;
+  display: flex;
+  flex: 1 1 auto;
 }
-
-.section {
-  padding: 4rem 0;
-}
-
-.section .container {
-  width: 100%;
-  max-width: 120rem;
-  margin: 0 auto;
-  padding: 0 1.6rem;
+main > section {
+  flex: 1 1 auto;
 }
 
 footer {
   width: 100%;
-  max-width: 120rem;
   /**/
-  padding: 1.6rem;
-  margin: 0 auto;
+  padding: 3.2rem 0;
 }
+footer p {
+  margin: 0;
+}
+
+/*
+ * Typography customizations
+ */
+
+/* Paragraphs and general text */
+body,
+p,
+li,
+ul,
+ol,
+dl,
+dd,
+blockquote {
+  color: var(--text-primary);
+}
+
+/* Small text, captions, legends */
+small,
+.caption,
+figcaption,
+legend,
+label {
+  color: var(--text-secondary);
+}
+
+/* Code blocks and inline code */
+pre,
+code,
+kbd,
+samp {
+  background: var(--color-surface-muted);
+  color: var(--text-primary);
+}
+
+/* Links */
+a {
+  text-decoration: none;
+  /**/
+  color: var(--color-primary);
+}
+a:hover,
+a:active {
+  color: var(--color-primary-light)
+}
+
+/* Buttons */
+button,
+.btn {
+  min-width: 6.4rem;
+  border-radius: 0.4rem;
+  /**/
+  padding: 0.8rem 1.6rem;
+  /**/
+  background-color: rgba(255, 255, 255, 1);
+  color: var(--text-primary);
+}
+
+/* Blockquote */
+blockquote {
+  color: var(--text-secondary);
+}
+
+/*
+ * Components
+ */
+
+/* Navigation links menu */
+nav.nav {
+  display: flex;
+  flex: 1 1 auto;
+}
+.nav__right {
+  justify-content: flex-end;
+}
+.nav-list {
+  display: flex;
+  list-style: none;
+  gap: 1.6rem;
+  /**/
+  margin: 0;
+  padding: 0;
+}
+ul.nav-list > li {
+  /**/
+  margin: 0;
+  /**/
+}
+
+canvas#showroom {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-width: 80rem;
+  /**/
+  margin: auto;
+  /**/
+  border: 0.1rem solid var(--border-color);
+  
+}
+
