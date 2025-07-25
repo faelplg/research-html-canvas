@@ -9,7 +9,9 @@ document.addEventListener('DOMContentLoaded', function() {
   // Responsividade e alta definição
   function resizeCanvas() {
     console.log('...resizing canvas...');
-    const dpr = window.devicePixelRatio || 1;
+    // const dpr = window.devicePixelRatio || 1;
+    const dpr = 1;
+    console.log(dpr);
     // Pegue o tamanho exibido pelo CSS
     const rect = canvas.getBoundingClientRect();
     canvas.width = rect.width * dpr;
@@ -17,12 +19,11 @@ document.addEventListener('DOMContentLoaded', function() {
     ctx.setTransform(1, 0, 0, 1, 0, 0); // Reset transform
     ctx.scale(dpr, dpr);
 
-    ctx.fillStyle = '#222';
+    ctx.fillStyle = '#e9e6ea';
     ctx.fillRect(0, 0, canvas.width, canvas.height);
-    ctx.fillStyle = '#fff';
+    ctx.fillStyle = '#1a0e1d';
 
     ctx.font = '24px Space Grotesk, sans-serif';
-    ctx.fillStyle = 'red';
     ctx.fillText('Welcome to the HTML Canvas Experiments Showroom!', 32, canvas.height/2);
   }
   window.addEventListener('resize', resizeCanvas);
