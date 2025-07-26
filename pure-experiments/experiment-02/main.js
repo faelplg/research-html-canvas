@@ -1,4 +1,4 @@
-console.log("==Main==");
+console.log("==Main - Experiment 02 ==");
 
 /*
  * Canvas config
@@ -11,38 +11,33 @@ console.log("==Main==");
  * Device pixel ratio for high-DPI screens
  */
 const config = {
-  width: 1000,
-  height: 400,
+  width: 1080,
+  height: 1080,
   aspect: 2.5,
-  margin: 8,
-  background: "#e9e6ea",
+  margin: 32,
+  background: "#f4f1f5",
   pixelRatio: window.devicePixelRatio || 1,
 };
 
 /* Sets up the canvas to be responsive and high-DPI aware */
 function setupCanvas(canvas, config) {
   function resize() {
-    const container = canvas.parentElement; // Gets the parent container of the canvas
+    const main = canvas.parentElement; // Gets the parent container of the canvas
     const dpr = config.pixelRatio;          // Uses the configured device pixel ratio
-    
+   
     /* Calculates available width and height, considering margins */
-    const containerWidth = container.clientWidth - config.margin * 2;
-    const containerHeight =
+    const mainWidth = main.clientWidth - config.margin * 2;
+    const mainHeight =
       window.innerHeight -
-      container.getBoundingClientRect().top -
+      main.getBoundingClientRect().top -
       config.margin * 2;
-    
-    /* Calculates canvas size while maintaining the aspect ratio */
-    let width = containerWidth;
-    let height = width / config.aspect;
-    if (height > containerHeight) {
-      height = containerHeight;
-      width = height * config.aspect;
-    }
-    width = Math.floor(width);
-    height = Math.floor(height);
+    let width = mainWidth;
+    let height = mainHeight;
+     
+    console.log(`canvas width: ${width}`);
+    console.log(`canvas height: ${height}`);
 
-    /* Sets the actual canvas pixel size */
+    /* Sets the actual canvas pixel size (for high-DPI) */
     canvas.width = width * dpr;
     canvas.height = height * dpr;
     /* Sets the CSS size of the canvas */
@@ -60,11 +55,16 @@ function setupCanvas(canvas, config) {
   resize(); // Initial call to set up the canvas
 }
 
-// Handles all drawing logic for the canvas
+/* Handles all drawing logic for the canvas */
 function draw(ctx, width, height, config) {
   ctx.fillStyle = config.background;
   ctx.fillRect(0, 0, width, height);
 
+  ctx.beginPath();
+  ctx.moveTo(width/2, 0);
+  ctx.lineTo(width/2, height);
+  ctx.stroke();
+  
   ctx.fillStyle = "#1a0e1d";
   ctx.font = "24px Space Grotesk, sans-serif";
   ctx.textAlign = "center";
@@ -74,15 +74,6 @@ function draw(ctx, width, height, config) {
     width / 2,
     height / 2
   );
-
-  // Seu código experimental aqui
-  ctx.strokeStyle = "#d1528c";
-  ctx.beginPath();
-  for (let x = 0; x < width; x += 10) {
-    ctx.moveTo(x, height / 2);
-    ctx.lineTo(x, height / 2 + 40 * Math.sin(x * 0.05));
-  }
-  ctx.stroke();
 }
 
 document.addEventListener("DOMContentLoaded", function () {
