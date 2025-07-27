@@ -58,7 +58,7 @@ body {
   /**/
   /**/
   background-color: var(--color-primary-light);
-  border-bottom: 0.1rem solid var(--color-surface-muted);
+  border-bottom: 0.1rem solid var(--color-primary-dark);
 }
 
 /* Header style */
@@ -70,9 +70,9 @@ header {
   position: sticky;
   /**/
   /**/
-  background: var(--color-surface);
-  color: var(--text-primary);
-  border-bottom: 0.1rem solid var(--color-surface-muted);
+  background: var(--color-primary-dark);
+  color: var(--text-inverse);
+  border-bottom: 0.1rem solid var(--color-primary-light);
 }
 header .container {
   display: flex;
@@ -137,14 +137,16 @@ samp {
 }
 
 /* Links */
-a {
+header a {
   text-decoration: none;
   /**/
-  color: var(--color-primary);
+  color: var(--color-secondary-light);
 }
-a:hover,
-a:active {
-  color: var(--color-primary-light)
+header a:hover {
+  color: var(--color-secondary);
+}
+header a:active, a.active {
+  color: var(--color-secondary-dark)
 }
 
 /* Buttons */
@@ -198,6 +200,6 @@ canvas#showroom {
   /**/
   border: 0.1rem solid var(--border-color);
   /* offset-x | offset-y | blur-radius | spread-radius | color */
-  box-shadow: 0.32rem 0.48rem 0.8rem 0.2rem rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0.48rem 1rem 0.32rem rgba(0, 0, 0, 0.2);
 }
 
