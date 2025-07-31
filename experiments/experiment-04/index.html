@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- SEO Meta tags -->
+    <title>Projeto SinCos - Exploração 03</title>
+    <meta
+      name="description"
+      content="First creative coding experiment of SinCos Project using HTML Canvas for interactive visual experiences."
+    />
+    <meta
+      name="keywords"
+      content="html, css, javascript, creative, coding, web, canvas, sincos, visual, interactive"
+    />
+    <meta name="author" content="AVJ SinCos" />
+
+    <!-- Favicon -->
+    <link rel="icon" href="favicon.ico" />
+    <!--<link rel="apple-touch-icon" sizes="180x180" href="img/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png" />-->
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&display=swap"
+    />
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="reset.css" />
+    <link rel="stylesheet" href="typography.css" />
+    <link rel="stylesheet" href="colors.css" />
+    <link rel="stylesheet" href="styles.css" />
+
+    <!-- Script -->
+    <script src="./main.js"></script>
+  </head>
+  <body>
+    <!-- Project header -->
+    <div class="project__header">
+      <div class="container">
+        <div class="logo-sincos" style="height:100%;display:flex;align-items:center;justify-content:center;">
+          <img id="logo__header" src="./logo-eff-mono.png" style="height:7rem;" />
+        </div>
+      </div>
+    </div>
+    <!-- Navigation header -->
+    <header>
+      <div class="container">
+        <h4>Experiment 04</h4>
+        <nav class="nav nav__right" aria-label="Main navigation">
+          <ul class="nav-list">
+            <li>
+              <a href="#main" class="active">View</a>
+            </li>
+            <li>
+              <a href="#about">Code</a>
+            </li>
+            <li>
+              <a href="#about">Close</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <!-- Main content -->
+    <main id="main">
+      <canvas id="showroom" width="1080" height="1080">O navegador não suporta um elemento 'canvas'.</canvas>
+    </main>
+  </body>
+</html>

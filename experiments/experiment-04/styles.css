@@ -1,0 +1,205 @@
+/*
+ * Main structures
+ */
+
+/* All elements */
+* {
+  box-sizing: border-box;
+}
+
+/* HTML main settings */
+html {
+  height: 100%;
+  /*
+	 * I want 10px as the default font-size.
+	 * 16px is the root default.
+	 * 10px divided by 16px = 0.625.
+	 * Now 1rem ~= 10px;
+	 */
+  font-size: 62.5%;
+}
+
+/* Body behavior */
+body {
+  height: 100%;
+  display: flex;
+  flex-flow: column;
+  overflow: auto;
+  /**/
+  /**/
+  background: var(--color-surface-muted);
+}
+
+/* Page sections */
+.section {
+  /**/
+  padding: 4rem 0;
+  /**/
+}
+
+.container {
+  width: 100%;
+  max-width: 120rem;
+  /**/
+  margin: 0 auto;
+  padding: 0 1.6rem;
+  /**/
+}
+
+/*
+ * Page structures
+ */
+
+.project__header {
+  min-height: 6.4rem;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  /**/
+  /**/
+  background-color: var(--color-primary-light);
+  border-bottom: 0.1rem solid var(--color-primary-dark);
+}
+
+/* Header style */
+header {
+  min-height: 4.8rem;
+  display: flex;
+  top: 0;
+  z-index: 100;
+  position: sticky;
+  /**/
+  /**/
+  background: var(--color-primary-dark);
+  color: var(--text-inverse);
+  border-bottom: 0.1rem solid var(--color-primary-light);
+}
+header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /**/
+  /**/
+}
+header h4 {
+  margin: 0;
+}
+
+main {
+  flex: 1 1 auto;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+}
+
+footer {
+  width: 100%;
+  /**/
+  padding: 3.2rem 0;
+}
+footer p {
+  margin: 0;
+}
+
+/*
+ * Typography customizations
+ */
+
+/* Paragraphs and general text */
+body,
+p,
+li,
+ul,
+ol,
+dl,
+dd,
+blockquote {
+  color: var(--text-primary);
+}
+
+/* Small text, captions, legends */
+small,
+.caption,
+figcaption,
+legend,
+label {
+  color: var(--text-secondary);
+}
+
+/* Code blocks and inline code */
+pre,
+code,
+kbd,
+samp {
+  background: var(--color-surface-muted);
+  color: var(--text-primary);
+}
+
+/* Links */
+header a {
+  text-decoration: none;
+  /**/
+  color: var(--color-secondary-light);
+}
+header a:hover {
+  color: var(--color-secondary);
+}
+header a:active, a.active {
+  color: var(--color-secondary-dark)
+}
+
+/* Buttons */
+button,
+.btn {
+  min-width: 6.4rem;
+  border-radius: 0.4rem;
+  /**/
+  padding: 0.8rem 1.6rem;
+  /**/
+  background-color: rgba(255, 255, 255, 1);
+  color: var(--text-primary);
+}
+
+/* Blockquote */
+blockquote {
+  color: var(--text-secondary);
+}
+
+/*
+ * Components
+ */
+
+/* Navigation links menu */
+nav.nav {
+  display: flex;
+  flex: 1 1 auto;
+}
+.nav__right {
+  justify-content: flex-end;
+}
+.nav-list {
+  display: flex;
+  list-style: none;
+  gap: 1.6rem;
+  /**/
+  margin: 0;
+  padding: 0;
+}
+ul.nav-list > li {
+  /**/
+  margin: 0;
+  /**/
+}
+
+/* Canvas style */
+canvas#showroom {
+  display: block;
+  flex: 0 1 auto;
+  /**/
+  /**/
+  border: 0.1rem solid var(--border-color);
+  /* offset-x | offset-y | blur-radius | spread-radius | color */
+  box-shadow: 0 0.48rem 1rem 0.32rem rgba(0, 0, 0, 0.2);
+}
+
