@@ -39,7 +39,7 @@ const mapRange = (value, inputMin, inputMax, outputMin, outputMax, clamp = false
   if (Math.abs(inputMin - inputMax) < Number.EPSILON) {
     return outputMin
   }
-  let outVal = ((value - inputMin) / (inputMax - inputMin)) * (outputMax - outputMin);
+  let outVal = ((value - inputMin) / (inputMax - inputMin) * (outputMax - outputMin) + outputMin);
   if (clamp) {
     if (outputMax < outputMin) {
       if (outVal < outputMax) outVal = outputMax;
@@ -63,7 +63,7 @@ function setupCanvas(canvas, config) {
   let height = 0;
   let agents = [];
   let randomX, randomY;
-  let agentNum = 160;
+  let agentNum = 32;
   let frame = 0;
   let animated = true;
   let animationId = null;
@@ -113,7 +113,6 @@ function setupCanvas(canvas, config) {
      */
     function animate(now) {
       console.log('=== Animate ===');
-      console.log(`frame: ${frame}`);
       if (!lastTime) lastTime = now;
       const delta = now - lastTime;
       if (delta > frameInterval) {
@@ -142,7 +141,6 @@ function setupCanvas(canvas, config) {
  */
 function draw(ctx, width, height, config, frame, agents) {
   console.log('=== Draw ===');
-  console.log('frame', frame);
   ctx.fillStyle = config.background;
   ctx.strokeStyle = config.color;
   ctx.fillRect(0, 0, width, height);
@@ -151,14 +149,16 @@ function draw(ctx, width, height, config, frame, agents) {
   for (let i = 0; i < agents.length; i++) {
     const agent = agents[i];
     for (let j = i + 1; j < agents.length; j++) {
-      if (Math.random() < 0.1) {
-        agents[i].bump(agents[j]);
-      }
       const other = agents[j];
+      if (Math.random() < 0.1) {
+        agent.bump(other);
+      }
       const distance = agent.position.getDistanceTo(other.position);
+      const minDistance = agent.radius + other.radius;
       if (distance > 160) continue;
+
       ctx.save();
-      ctx.lineWidth = mapRange(distance, 0, 200, 10, 0)
+      ctx.lineWidth = mapRange(distance, minDistance, 160, 16, 1);
       ctx.beginPath();
       ctx.moveTo(agent.position.x, agent.position.y);
       ctx.lineTo(other.position.x, other.position.y);
